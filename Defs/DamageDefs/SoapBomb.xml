@@ -60,7 +60,7 @@
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
+    <thingClass>ExpandedShells.Projectile_SoapBomb</thingClass>
     <projectile>
       <damageDef>SoapExplosion</damageDef>
       <!-- damage amount is the damage def default -->
