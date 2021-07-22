@@ -12,8 +12,7 @@
 		<harmsHealth>false</harmsHealth>
 		<soundExplosion>Explosion_Smoke</soundExplosion>
 		<combatLogRules>Damage_Smoke</combatLogRules>
-	</DamageDef>
-	
+	</DamageDef>	
 	
 	<ThingDef ParentName="MakeableShellBase">
 		<defName>Shell_Soap</defName>
