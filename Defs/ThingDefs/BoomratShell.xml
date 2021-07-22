@@ -38,10 +38,12 @@
 		<projectileWhenLoaded>Bullet_Shell_CompressedFirefoam</projectileWhenLoaded>
 		<costList>
 			<Steel>60</Steel>
+			<Chemfuel>150</Chemfuel>
 		</costList>
 		<costListForDifficulty>
 		<difficultyVar>classicMortars</difficultyVar>
 		<costList>
+			<Steel>60</Steel>
 			<Chemfuel>60</Chemfuel>
 		</costList>
 		</costListForDifficulty>
