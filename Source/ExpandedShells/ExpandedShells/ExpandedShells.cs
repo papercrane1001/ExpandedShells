@@ -30,7 +30,7 @@ namespace ExpandedShells
                     {
                         IntVec3 ivt = new IntVec3(i, target.y, j);
                         List<Thing> thingList = ivt.GetThingList(map);
-                        for(int k = 0; k < thingList.Count; ++k)
+                        for(int k = thingList.Count-1; k >= 0; --k)
                         {
                             Filth filth = thingList[k] as Filth;
                             if(filth != null)
@@ -72,10 +72,22 @@ namespace ExpandedShells
             IntVec3 target = this.Position;
             Map map = this.Map;
 
+            int count = 4;
+
             //float range = 16.9F;
 
             //RimWorld.CompSpawnerPawn
+            //PawnKindDefOf.
+            PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDefOf.Boomalope);
+            //Pawn p1 = PawnGenerator.GeneratePawn(request);
+            //List<Pawn> pList = new List<Pawn>();
+            for(int i = 0; i < count; ++i)
+            {
+                Pawn pawn = PawnGenerator.GeneratePawn(request);
+                //PawnUtility.TrySpawnHatchedOrBornPawn(pawn)
+            }
 
+                
             base.Explode();
         }
 
