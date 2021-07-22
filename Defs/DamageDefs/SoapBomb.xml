@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
 	<DamageDef>
 		<defName>SoapExplosion</defName>
 		<label>soap</label>
@@ -29,7 +28,7 @@
 			<explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
 			<startWickHitPointsPercent>0.7</startWickHitPointsPercent>
 			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
-			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+			<postExplosionSpawnChance>0</postExplosionSpawnChance>
 			<postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
 			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
 			<explosionEffect>ExtinguisherExplosion</explosionEffect>
@@ -71,7 +70,7 @@
       <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
       <soundAmbient>MortarRound_Ambient</soundAmbient>
       <postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
-      <postExplosionSpawnChance>1</postExplosionSpawnChance>
+      <postExplosionSpawnChance>0</postExplosionSpawnChance>
       <postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
       <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
       <explosionEffect>ExtinguisherExplosion</explosionEffect>

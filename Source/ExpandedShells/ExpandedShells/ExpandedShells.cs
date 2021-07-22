@@ -64,4 +64,38 @@ namespace ExpandedShells
             }
         }
     }
+
+    public class Projectile_Boomrat : Projectile_Explosive
+    {
+        protected override void Explode()
+        {
+            IntVec3 target = this.Position;
+            Map map = this.Map;
+
+            //float range = 16.9F;
+
+            //RimWorld.CompSpawnerPawn
+
+            base.Explode();
+        }
+
+        protected override void Impact(Thing hitThing)
+        {
+            base.Impact(hitThing);
+            Explode();
+            return;
+        }
+
+        protected void SpawnFleck(LocalTargetInfo target, FleckDef def, Map map)
+        {
+            if (target.HasThing)
+            {
+                FleckMaker.AttachedOverlay(target.Thing, def, Vector3.zero, 1f);
+            }
+            else
+            {
+                FleckMaker.Static(target.Cell, map, def, 1f);
+            }
+        }
+    }
 }
