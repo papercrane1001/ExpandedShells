@@ -65,49 +65,49 @@ namespace ExpandedShells
         }
     }
 
-    public class Projectile_Boomrat : Projectile_Explosive
-    {
-        protected override void Explode()
-        {
-            IntVec3 target = this.Position;
-            Map map = this.Map;
+    //public class Projectile_Boomrat : Projectile_Explosive
+    //{
+    //    protected override void Explode()
+    //    {
+    //        IntVec3 target = this.Position;
+    //        Map map = this.Map;
 
-            int count = 4;
+    //        int count = 4;
 
-            //float range = 16.9F;
+    //        //float range = 16.9F;
 
-            //RimWorld.CompSpawnerPawn
-            //PawnKindDefOf.
-            PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDefOf.Boomalope);
-            //Pawn p1 = PawnGenerator.GeneratePawn(request);
-            //List<Pawn> pList = new List<Pawn>();
-            for(int i = 0; i < count; ++i)
-            {
-                Pawn pawn = PawnGenerator.GeneratePawn(request);
-                //PawnUtility.TrySpawnHatchedOrBornPawn(pawn)
-            }
+    //        //RimWorld.CompSpawnerPawn
+    //        //PawnKindDefOf.
+    //        PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDefOf.Boomalope);
+    //        //Pawn p1 = PawnGenerator.GeneratePawn(request);
+    //        //List<Pawn> pList = new List<Pawn>();
+    //        for(int i = 0; i < count; ++i)
+    //        {
+    //            Pawn pawn = PawnGenerator.GeneratePawn(request);
+    //            //PawnUtility.TrySpawnHatchedOrBornPawn(pawn)
+    //        }
 
                 
-            base.Explode();
-        }
+    //        base.Explode();
+    //    }
 
-        protected override void Impact(Thing hitThing)
-        {
-            base.Impact(hitThing);
-            Explode();
-            return;
-        }
+    //    protected override void Impact(Thing hitThing)
+    //    {
+    //        base.Impact(hitThing);
+    //        Explode();
+    //        return;
+    //    }
 
-        protected void SpawnFleck(LocalTargetInfo target, FleckDef def, Map map)
-        {
-            if (target.HasThing)
-            {
-                FleckMaker.AttachedOverlay(target.Thing, def, Vector3.zero, 1f);
-            }
-            else
-            {
-                FleckMaker.Static(target.Cell, map, def, 1f);
-            }
-        }
-    }
+    //    protected void SpawnFleck(LocalTargetInfo target, FleckDef def, Map map)
+    //    {
+    //        if (target.HasThing)
+    //        {
+    //            FleckMaker.AttachedOverlay(target.Thing, def, Vector3.zero, 1f);
+    //        }
+    //        else
+    //        {
+    //            FleckMaker.Static(target.Cell, map, def, 1f);
+    //        }
+    //    }
+    //}
 }
