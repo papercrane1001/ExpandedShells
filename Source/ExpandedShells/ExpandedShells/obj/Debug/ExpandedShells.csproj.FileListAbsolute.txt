@@ -3,3 +3,8 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ExpandedShells\Sourc
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ExpandedShells\Source\ExpandedShells\ExpandedShells\obj\Debug\ExpandedShells.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ExpandedShells\Source\ExpandedShells\ExpandedShells\obj\Debug\ExpandedShells.csproj.CopyComplete
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ExpandedShells\Source\ExpandedShells\ExpandedShells\obj\Debug\ExpandedShells.dll
+C:\Users\wallison\Desktop\Shortcuts\Games\Mods\ExpandedShells\Assemblies\ExpandedShells.dll
+C:\Users\wallison\Desktop\Shortcuts\Games\Mods\ExpandedShells\Source\ExpandedShells\ExpandedShells\obj\Debug\ExpandedShells.csproj.AssemblyReference.cache
+C:\Users\wallison\Desktop\Shortcuts\Games\Mods\ExpandedShells\Source\ExpandedShells\ExpandedShells\obj\Debug\ExpandedShells.csproj.CoreCompileInputs.cache
+C:\Users\wallison\Desktop\Shortcuts\Games\Mods\ExpandedShells\Source\ExpandedShells\ExpandedShells\obj\Debug\ExpandedShells.csproj.CopyComplete
+C:\Users\wallison\Desktop\Shortcuts\Games\Mods\ExpandedShells\Source\ExpandedShells\ExpandedShells\obj\Debug\ExpandedShells.dll
