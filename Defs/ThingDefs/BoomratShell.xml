@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Defs>
-	<DamageDef>
-		<defName>BoomratExplosion</defName>
-		<label>soap</label>
-		<canInterruptJobs>false</canInterruptJobs>
-		<makesBlood>false</makesBlood>
-		<defaultDamage>0</defaultDamage>
-		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
-		<explosionColorEdge>(1, 1, 1, 0.05)</explosionColorEdge>
-		<harmsHealth>false</harmsHealth>
-		<soundExplosion>Explosion_Smoke</soundExplosion>
-		<combatLogRules>Damage_Smoke</combatLogRules>
-	</DamageDef>
-	
+<Defs>	
 	<ThingDef ParentName="MakeableShellBase">
-		<defName>Shell_Boomrat</defName>
-		<label>boomrat shell</label>
-		<description>A shell filled with angry boomrats. Can be fired from mortars. Explodes when damaged.</description>
+		<defName>Shell_Boomalope</defName>
+		<label>boomalope shell</label>
+		<description>A shell filled with angry boomalopes. Can be fired from mortars. Explodes when damaged.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/Shell/Shell_Firefoam</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
@@ -24,7 +11,7 @@
 		<comps>
 		<li Class="CompProperties_Explosive">
 			<explosiveRadius>16</explosiveRadius>
-			<explosiveDamageType>SoapExplosion</explosiveDamageType>
+			<explosiveDamageType>BoomratExplosion</explosiveDamageType>
 			<explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
 			<startWickHitPointsPercent>0.7</startWickHitPointsPercent>
 			<postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
@@ -35,7 +22,7 @@
 			<wickTicks>30~60</wickTicks>
 		</li>
 		</comps>
-		<projectileWhenLoaded>Bullet_Shell_CompressedFirefoam</projectileWhenLoaded>
+		<projectileWhenLoaded>Bullet_Shell_Boomrat</projectileWhenLoaded>
 		<costList>
 			<Steel>60</Steel>
 			<Chemfuel>150</Chemfuel>
@@ -54,15 +41,15 @@
   
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_Shell_Boomrat</defName>
-    <label>big firefoam shell</label>
+    <label>boomalope shell</label>
     <graphicData>
       <texPath>Things/Projectile/ShellFirefoam</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <thingClass>ExpandedShells.Projectile_SoapBomb</thingClass>
+    <thingClass>ExpandedShells.Projectile_Boomrat</thingClass>
     <projectile>
-      <damageDef>SoapExplosion</damageDef>
+      <damageDef>BoomratExplosion</damageDef>
       <!-- damage amount is the damage def default -->
       <speed>81</speed>
       <explosionRadius>16</explosionRadius>

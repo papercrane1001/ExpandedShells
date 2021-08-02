@@ -9,6 +9,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.Sound;
+//using UnityEngine.CoreModule;
 
 //using HarmonyLib;
 
@@ -64,7 +65,8 @@ namespace ExpandedShells
         {
             if (target.HasThing)
             {
-                FleckMaker.AttachedOverlay(target.Thing, def, Vector3.zero, 1f);
+                
+                RimWorld.FleckMaker.AttachedOverlay(target.Thing, def, Vector3.zero, 1f);
             }
             else
             {
@@ -73,49 +75,45 @@ namespace ExpandedShells
         }
     }
 
-    //public class Projectile_Boomrat : Projectile_Explosive
-    //{
-    //    protected override void Explode()
-    //    {
-    //        IntVec3 target = this.Position;
-    //        Map map = this.Map;
+    public class Projectile_Boomrat : Projectile_Explosive
+    {
+        protected override void Explode()
+        {
+            IntVec3 target = this.Position;
+            Map map = this.Map;
 
-    //        int count = 4;
+            int count = 3;
+            
+            PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDefOf.Boomalope);
+            
+            for (int i = 0; i < count; ++i)
+            {
+                Pawn pawn = PawnGenerator.GeneratePawn(request);
+                pawn.health.AddHediff(HediffDefOf.Scaria, null, null, null);
+                pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent, null, false, false, null, false, false, false);
+                PawnUtility.TrySpawnHatchedOrBornPawn(pawn, this);
+            }
 
-    //        //float range = 16.9F;
+            base.Explode();
+        }
 
-    //        //RimWorld.CompSpawnerPawn
-    //        //PawnKindDefOf.
-    //        PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDefOf.Boomalope);
-    //        //Pawn p1 = PawnGenerator.GeneratePawn(request);
-    //        //List<Pawn> pList = new List<Pawn>();
-    //        for(int i = 0; i < count; ++i)
-    //        {
-    //            Pawn pawn = PawnGenerator.GeneratePawn(request);
-    //            //PawnUtility.TrySpawnHatchedOrBornPawn(pawn)
-    //        }
+        protected override void Impact(Thing hitThing)
+        {
+            base.Impact(hitThing);
+            Explode();
+            return;
+        }
 
-                
-    //        base.Explode();
-    //    }
-
-    //    protected override void Impact(Thing hitThing)
-    //    {
-    //        base.Impact(hitThing);
-    //        Explode();
-    //        return;
-    //    }
-
-    //    protected void SpawnFleck(LocalTargetInfo target, FleckDef def, Map map)
-    //    {
-    //        if (target.HasThing)
-    //        {
-    //            FleckMaker.AttachedOverlay(target.Thing, def, Vector3.zero, 1f);
-    //        }
-    //        else
-    //        {
-    //            FleckMaker.Static(target.Cell, map, def, 1f);
-    //        }
-    //    }
-    //}
+        protected void SpawnFleck(LocalTargetInfo target, FleckDef def, Map map)
+        {
+            if (target.HasThing)
+            {
+                FleckMaker.AttachedOverlay(target.Thing, def, Vector3.zero, 1f);
+            }
+            else
+            {
+                FleckMaker.Static(target.Cell, map, def, 1f);
+            }
+        }
+    }
 }
