@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Expanded Shells</name>
+	<name>[1001]Expanded Shells</name>
 	<author>papercrane1001</author>
 	<packageId>papercrane1001.ExpandedShells</packageId>
 	<supportedVersions>
@@ -18,6 +18,8 @@
 	a "Hat Shell," which inflicts a "horrified" debuff on nearby raiders,
 	an "Acid Shell," which causes a damage over time hediff, and
 	a "Turret Shell," which drops a self-powered mini-turret at its point of impact.
+	
+	Also, textures.  If anyone likes making textures, I would appreciate textures for my shells, because my attempts at textures are terrible.  
 	
 	Like my mod?  Donate at:
 	https://ko-fi.com/papercrane1001
