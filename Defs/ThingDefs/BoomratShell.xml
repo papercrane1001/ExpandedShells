@@ -53,7 +53,7 @@
   </ThingDef>
   
   <ThingDef ParentName="BaseBullet">
-    <defName>Bullet_Shell_CompressedFirefoam</defName>
+    <defName>Bullet_Shell_Boomrat</defName>
     <label>big firefoam shell</label>
     <graphicData>
       <texPath>Things/Projectile/ShellFirefoam</texPath>

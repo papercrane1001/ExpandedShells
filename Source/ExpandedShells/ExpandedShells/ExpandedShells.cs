@@ -32,15 +32,19 @@ namespace ExpandedShells
                 {
                     if(Math.Pow(Math.Pow(target.x - i, 2) + Math.Pow(target.z - j, 2), 0.5) < range)
                     {
+                        //if(i > 0)
                         IntVec3 ivt = new IntVec3(i, target.y, j);
                         List<Thing> thingList = ivt.GetThingList(map);
-                        for(int k = thingList.Count-1; k >= 0; --k)
+                        if (thingList != null)
                         {
-                            Filth filth = thingList[k] as Filth;
-                            if(filth != null)
+                            for (int k = thingList.Count - 1; k >= 0; --k)
                             {
-                                filth.Destroy();
-                                SpawnFleck(new LocalTargetInfo(ivt), FleckDefOf.Smoke, map);
+                                Filth filth = thingList[k] as Filth;
+                                if (filth != null)
+                                {
+                                    filth.Destroy();
+                                    SpawnFleck(new LocalTargetInfo(ivt), FleckDefOf.Smoke, map);
+                                }
                             }
                         }
                     }
