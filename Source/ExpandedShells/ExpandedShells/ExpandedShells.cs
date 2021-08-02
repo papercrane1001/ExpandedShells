@@ -23,10 +23,11 @@ namespace ExpandedShells
         protected override void Explode()
         {
             IntVec3 target = this.Position;
-            Map map = this.Map;
+            Map map = base.Map;
 
             float range = 16.9F;
 
+            //if(target == null) { Log.Message("Target"); }
             for(int i = target.x - (int)range; i < target.x + (int)range; ++i)
             {
                 for(int j = target.z - (int)range; j < target.z + (int) range; ++j)
@@ -35,23 +36,36 @@ namespace ExpandedShells
                     {
                         //if(i > 0)
                         IntVec3 ivt = new IntVec3(i, target.y, j);
-                        List<Thing> thingList = ivt.GetThingList(map);
-                        if (thingList != null)
+                        if (map == null) 
                         {
-                            for (int k = thingList.Count - 1; k >= 0; --k)
+                            continue;
+                            //Log.Message("null" + i.ToString() + j.ToString()); 
+                        }
+                        //else { Log.Message("Not null"); }
+                        //if (ivt == null) { Log.Message("ivt, " + i.ToString() + " " + j.ToString()); }
+
+                        if (map.AllCells.Contains<IntVec3>(ivt))
+                        {
+                            List<Thing> thingList = ivt.GetThingList(map);
+                            if (thingList != null)
                             {
-                                Filth filth = thingList[k] as Filth;
-                                if (filth != null)
+                                for (int k = thingList.Count - 1; k >= 0; --k)
                                 {
-                                    filth.Destroy();
-                                    SpawnFleck(new LocalTargetInfo(ivt), FleckDefOf.Smoke, map);
+                                    Filth filth = thingList[k] as Filth;
+                                    if (filth != null)
+                                    {
+                                        filth.Destroy();
+                                        SpawnFleck(new LocalTargetInfo(ivt), FleckDefOf.Smoke, map);
+                                    }
                                 }
                             }
                         }
+
                     }
                 }
             }
-            base.Explode();
+            //base.Explode();
+            if(!this.DestroyedOrNull()) base.Explode();
         }
 
         protected override void Impact(Thing hitThing)
@@ -90,11 +104,11 @@ namespace ExpandedShells
             {
                 Pawn pawn = PawnGenerator.GeneratePawn(request);
                 pawn.health.AddHediff(HediffDefOf.Scaria, null, null, null);
-                pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent, null, false, false, null, false, false, false);
-                PawnUtility.TrySpawnHatchedOrBornPawn(pawn, this);
+                PawnUtility.TrySpawnHatchedOrBornPawn(pawn, this); 
+                pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter);
             }
 
-            base.Explode();
+            if (!this.DestroyedOrNull()) base.Explode();
         }
 
         protected override void Impact(Thing hitThing)
