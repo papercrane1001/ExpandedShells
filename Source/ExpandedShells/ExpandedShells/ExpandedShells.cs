@@ -68,9 +68,9 @@ namespace ExpandedShells
             if(!this.DestroyedOrNull()) base.Explode();
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
-            base.Impact(hitThing);
+            base.Impact(hitThing, blockedByShield);
             Explode();
             return;
         }
@@ -111,9 +111,9 @@ namespace ExpandedShells
             if (!this.DestroyedOrNull()) base.Explode();
         }
 
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
-            base.Impact(hitThing);
+            base.Impact(hitThing, blockedByShield);
             Explode();
             return;
         }
