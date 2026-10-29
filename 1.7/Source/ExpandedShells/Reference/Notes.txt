@@ -1,0 +1,4 @@
+
+
+CE's guide
+https://github.com/CombatExtended-Continued/CombatExtended/wiki/Compatibility-Patch-Guide
