@@ -2,3 +2,10 @@
 
 CE's guide
 https://github.com/CombatExtended-Continued/CombatExtended/wiki/Compatibility-Patch-Guide
+
+Doesn't exactly explain explosives
+As-is, I can spawn in the shells, but can't load them into the mortars.  They don't appear to register as, for example, 81mm.  
+81mm shells don't seem to appear on the spawn thing list.  Check CE defs.
+
+C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2890901044
+
